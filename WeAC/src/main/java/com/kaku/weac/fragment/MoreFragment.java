@@ -60,8 +60,8 @@ import com.kaku.weac.view.CircleProgress;
 import com.kaku.weac.zxing.activity.CaptureActivity;
 import com.squareup.otto.Subscribe;
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.fb.FeedbackAgent;
-import com.umeng.fb.fragment.FeedbackFragment;
+//import com.umeng.fb.FeedbackAgent;
+//import com.umeng.fb.fragment.FeedbackFragment;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;
@@ -416,16 +416,16 @@ public class MoreFragment extends LazyLoadFragment {
     }
 
     private void operateFeedback() {
-        FeedbackAgent mFeedbackAgent = new FeedbackAgent(getActivity());
-        // 关闭反馈推送
-        mFeedbackAgent.closeFeedbackPush();
-        // 关闭语音反馈
-        mFeedbackAgent.closeAudioFeedback();
-        mFeedbackAgent.setWelcomeInfo(getString(R.string.welcome_suggestion));
-        Intent intentFeedback = new Intent(getActivity(), FeedbackActivity.class);
-        intentFeedback.putExtra(FeedbackFragment.BUNDLE_KEY_CONVERSATION_ID,
-                mFeedbackAgent.getDefaultConversation().getId());
-        startActivity(intentFeedback);
+//        FeedbackAgent mFeedbackAgent = new FeedbackAgent(getActivity());
+//        // 关闭反馈推送
+//        mFeedbackAgent.closeFeedbackPush();
+//        // 关闭语音反馈
+//        mFeedbackAgent.closeAudioFeedback();
+//        mFeedbackAgent.setWelcomeInfo(getString(R.string.welcome_suggestion));
+//        Intent intentFeedback = new Intent(getActivity(), FeedbackActivity.class);
+//        intentFeedback.putExtra(FeedbackFragment.BUNDLE_KEY_CONVERSATION_ID,
+//                mFeedbackAgent.getDefaultConversation().getId());
+//        startActivity(intentFeedback);
     }
 
     @Subscribe

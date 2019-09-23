@@ -119,6 +119,11 @@ android {
         abortOnError false
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
 }
 
 /*    sourceSets {
@@ -159,7 +164,7 @@ dependencies {
     compile('com.github.afollestad.material-dialogs:commons:0.8.5.4@aar') {
         transitive = true
     }
-    compile 'jp.wasabeef:recyclerview-animators:3.0.0'
+    compile 'jp.wasabeef:recyclerview-animators:2.2.7'
     compile 'com.balysv:material-ripple:1.0.2'
     compile 'com.makeramen:roundedimageview:2.2.1'
     compile 'me.everything:overscroll-decor-android:1.0.1'

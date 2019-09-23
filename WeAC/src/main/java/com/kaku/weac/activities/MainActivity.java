@@ -40,7 +40,7 @@ import com.kaku.weac.util.LogUtil;
 import com.kaku.weac.util.MyUtil;
 import com.kaku.weac.util.ToastUtil;
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.fb.FeedbackAgent;
+//import com.umeng.fb.FeedbackAgent;
 import com.umeng.update.UmengUpdateAgent;
 
 import java.util.ArrayList;
@@ -151,7 +151,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         UmengUpdateAgent.update(this);
 
         // 当开发者回复用户反馈后，提醒用户
-        new FeedbackAgent(this).sync();
+//        new FeedbackAgent(this).sync();
     }
 
     /**
