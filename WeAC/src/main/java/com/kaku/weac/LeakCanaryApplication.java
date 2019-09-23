@@ -54,6 +54,7 @@ public class LeakCanaryApplication extends LitePalApplication {
 //        } else {
 //            refWatcher = installLeakCanary();
 //        }
+        refWatcher = installLeakCanary();
     }
 
     /**
