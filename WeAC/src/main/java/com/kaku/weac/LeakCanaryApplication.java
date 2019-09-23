@@ -49,11 +49,11 @@ public class LeakCanaryApplication extends LitePalApplication {
     }
 
     private void initLeakCanary() {
-        if (BuildConfig.DEBUG) {
-            refWatcher = LeakCanary.install(this);
-        } else {
-            refWatcher = installLeakCanary();
-        }
+//        if (BuildConfig.DEBUG) {
+//            refWatcher = LeakCanary.install(this);
+//        } else {
+//            refWatcher = installLeakCanary();
+//        }
     }
 
     /**
