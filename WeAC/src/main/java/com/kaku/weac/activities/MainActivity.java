@@ -72,7 +72,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
     /**
      * 计时Tab控件
      */
-    private TextView tv_time;
+//    private TextView tv_time;
 
     /**
      * 更多Tab控件
@@ -184,20 +184,20 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         // 天气Tab界面布局
         ViewGroup tab_wea = (ViewGroup) findViewById(R.id.tab_wea);
         // 计时Tab界面布局
-        ViewGroup tab_time = (ViewGroup) findViewById(R.id.tab_time);
+//        ViewGroup tab_time = (ViewGroup) findViewById(R.id.tab_time);
         // 更多Tab界面布局
         ViewGroup tab_more = (ViewGroup) findViewById(R.id.tab_more);
 
         // 取得Tab控件
         tv_alarm_clock = (TextView) findViewById(R.id.tv_alarm_clock);
         tv_wea = (TextView) findViewById(R.id.tv_wea);
-        tv_time = (TextView) findViewById(R.id.tv_time);
+//        tv_time = (TextView) findViewById(R.id.tv_time);
         tv_more = (TextView) findViewById(R.id.tv_more);
 
         // 设置Tab点击事件
         tab_alarm_clock.setOnClickListener(this);
         tab_wea.setOnClickListener(this);
-        tab_time.setOnClickListener(this);
+//        tab_time.setOnClickListener(this);
         tab_more.setOnClickListener(this);
 
         // 设置Tab页面集合
@@ -278,10 +278,10 @@ public class MainActivity extends BaseActivity implements OnClickListener {
                 setTabSelection(1);
                 break;
             // 当选中计时Tab时
-            case R.id.tab_time:
-                // 切换计时视图
-                setTabSelection(2);
-                break;
+//            case R.id.tab_time:
+//                // 切换计时视图
+//                setTabSelection(2);
+//                break;
             // 当选中更多Tab时
             case R.id.tab_more:
                 // 切换更多视图
@@ -347,7 +347,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
             // 计时
             case 2:
                 // 改变计时控件的图片和文字颜色
-                setTextView(R.drawable.ic_time_select, tv_time, mSelectColor);
+//                setTextView(R.drawable.ic_time_select, tv_time, mSelectColor);
                 break;
             // 更多
             case 3:
@@ -368,7 +368,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         // 设置天气Tab为未选中状态
         setTextView(R.drawable.ic_weather_unselect, tv_wea, mUnSelectColor);
         // 设置计时Tab为未选中状态
-        setTextView(R.drawable.ic_time_unselect, tv_time, mUnSelectColor);
+//        setTextView(R.drawable.ic_time_unselect, tv_time, mUnSelectColor);
         // 设置更多Tab为未选中状态
         setTextView(R.drawable.ic_more_unselect, tv_more, mUnSelectColor);
     }

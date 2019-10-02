@@ -86,10 +86,10 @@ public class MoreFragment extends LazyLoadFragment {
      * Log tag ：MoreFragment
      */
     private static final String LOG_TAG = "MoreFragment";
-    private TextView mUsedMemoryTv;
-    private CircleProgress mCleanUpCP;
+//    private TextView mUsedMemoryTv;
+//    private CircleProgress mCleanUpCP;
     private ActivityManager mActivityManager;
-    private WaveLoadingView mClearMemoryIv;
+//    private WaveLoadingView mClearMemoryIv;
 
     /**
      * 标志位，标志已经初始化完成
@@ -106,7 +106,7 @@ public class MoreFragment extends LazyLoadFragment {
             }
         }
         if (mIsPrepared && mIsVisible) {
-            updateUIStatus();
+//            updateUIStatus();
         }
     }
 
@@ -148,82 +148,82 @@ public class MoreFragment extends LazyLoadFragment {
         ScrollView scrollView = (ScrollView) view.findViewById(R.id.scroll_view);
 //        OverScrollDecoratorHelper.setUpOverScroll(scrollView);
 
-        mUsedMemoryTv = (TextView) view.findViewById(R.id.used_memory_tv);
-        mCleanUpCP = (CircleProgress) view.findViewById(R.id.circle_progress);
+//        mUsedMemoryTv = (TextView) view.findViewById(R.id.used_memory_tv);
+//        mCleanUpCP = (CircleProgress) view.findViewById(R.id.circle_progress);
 
-        mClearMemoryIv = (WaveLoadingView) view.findViewById(R.id.wave_view);
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            // FIXME: 暂时解决4.0显示bug
-            mClearMemoryIv.setAmplitudeRatio(100);
-        }
+//        mClearMemoryIv = (WaveLoadingView) view.findViewById(R.id.wave_view);
+//        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+//            // FIXME: 暂时解决4.0显示bug
+//            mClearMemoryIv.setAmplitudeRatio(100);
+//        }
 
-        updateUIStatus();
+//        updateUIStatus();
 
-        // 主题
-        view.findViewById(R.id.theme).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                MyUtil.startActivity(getActivity(), ThemeActivity.class);
-            }
-        });
-
-        // 扫码
-        view.findViewById(R.id.scan_scan).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                MyUtil.startActivity(getActivity(), CaptureActivity.class);
-            }
-        });
-
-        // 造码
-        view.findViewById(R.id.generate_code).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                MyUtil.startActivity(getActivity(), GenerateCodeActivity.class);
-            }
-        });
-
-        // 清除缓存
-        view.findViewById(R.id.clear_memory).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                operateClearMemory();
-            }
-        });
-
-        // 一键清理
-        view.findViewById(R.id.clean_up).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                new CleanUpAsyncTask().execute();
-            }
-        });
-
-        // 意见反馈
-        view.findViewById(R.id.feedback).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                operateFeedback();
-            }
-        });
+//        // 主题
+//        view.findViewById(R.id.theme).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                MyUtil.startActivity(getActivity(), ThemeActivity.class);
+//            }
+//        });
+//
+//        // 扫码
+//        view.findViewById(R.id.scan_scan).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                MyUtil.startActivity(getActivity(), CaptureActivity.class);
+//            }
+//        });
+//
+//        // 造码
+//        view.findViewById(R.id.generate_code).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                MyUtil.startActivity(getActivity(), GenerateCodeActivity.class);
+//            }
+//        });
+//
+//        // 清除缓存
+//        view.findViewById(R.id.clear_memory).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                operateClearMemory();
+//            }
+//        });
+//
+//        // 一键清理
+//        view.findViewById(R.id.clean_up).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                new CleanUpAsyncTask().execute();
+//            }
+//        });
+//
+//        // 意见反馈
+//        view.findViewById(R.id.feedback).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                operateFeedback();
+//            }
+//        });
 
         // 关于
         view.findViewById(R.id.abort).setOnClickListener(new OnClickListener() {
@@ -235,51 +235,51 @@ public class MoreFragment extends LazyLoadFragment {
                 MyUtil.startActivity(getActivity(), AboutActivity.class);
             }
         });
-
-        // 检查更新
-        view.findViewById(R.id.check_update).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                operateUpdate();
-
-            }
-        });
-
-        // 赏个好评
-        view.findViewById(R.id.give_favor).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                giveFavor();
-            }
-        });
-
-        // 打赏
-        view.findViewById(R.id.rewards).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                showRewardsDialog();
-            }
-        });
-
-        // 好友分享
-        view.findViewById(R.id.friend_share).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MyUtil.isFastDoubleClick()) {
-                    return;
-                }
-                friendShare();
-            }
-        });
+//
+//        // 检查更新
+//        view.findViewById(R.id.check_update).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                operateUpdate();
+//
+//            }
+//        });
+//
+//        // 赏个好评
+//        view.findViewById(R.id.give_favor).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                giveFavor();
+//            }
+//        });
+//
+//        // 打赏
+//        view.findViewById(R.id.rewards).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                showRewardsDialog();
+//            }
+//        });
+//
+//        // 好友分享
+//        view.findViewById(R.id.friend_share).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (MyUtil.isFastDoubleClick()) {
+//                    return;
+//                }
+//                friendShare();
+//            }
+//        });
 
         // 常见问题
         view.findViewById(R.id.faq).setOnClickListener(new OnClickListener() {
@@ -436,51 +436,51 @@ public class MoreFragment extends LazyLoadFragment {
         MyUtil.setBackground(vg, getActivity());
     }
 
-    private void operateClearMemory() {
-        // 清理前缓存
-        String beforeMemory = mUsedMemoryTv.getText().toString();
-        DataCleanManager.clearAllCache(getActivity());
-        // 清理后缓存
-        final String afterMemory = DataCleanManager.getTotalCacheSize(getActivity());
-
-        // 更新wave
-        setClearMemoryWave(afterMemory);
-
-        int startValue;
-        if (beforeMemory.contains("MB")) {
-            startValue = Integer.parseInt(beforeMemory.split("MB")[0]);
-        } else if (beforeMemory.contains("G")) {
-            startValue = Integer.parseInt(beforeMemory.split("G")[0]) * 1024;
-        } else {
-            mUsedMemoryTv.setText(afterMemory);
-            return;
-        }
-
-        final int endValue;
-        if (afterMemory.contains("KB")) {
-            endValue = 0;
-        } else if (afterMemory.contains("MB")) {
-            endValue = Integer.parseInt(beforeMemory.split("MB")[0]);
-        } else {
-            mUsedMemoryTv.setText(afterMemory);
-            return;
-        }
-
-        ValueAnimator animator = ValueAnimator.ofObject(new IntEvaluator(), startValue, endValue);
-        animator.setDuration(1000);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                int value = (int) animation.getAnimatedValue();
-                if (value != endValue) {
-                    mUsedMemoryTv.setText(String.valueOf(value + "MB"));
-                } else {
-                    mUsedMemoryTv.setText(afterMemory);
-                }
-            }
-        });
-        animator.start();
-    }
+//    private void operateClearMemory() {
+//        // 清理前缓存
+////        String beforeMemory = mUsedMemoryTv.getText().toString();
+//        DataCleanManager.clearAllCache(getActivity());
+//        // 清理后缓存
+//        final String afterMemory = DataCleanManager.getTotalCacheSize(getActivity());
+//
+//        // 更新wave
+//        setClearMemoryWave(afterMemory);
+//
+//        int startValue;
+//        if (beforeMemory.contains("MB")) {
+//            startValue = Integer.parseInt(beforeMemory.split("MB")[0]);
+//        } else if (beforeMemory.contains("G")) {
+//            startValue = Integer.parseInt(beforeMemory.split("G")[0]) * 1024;
+//        } else {
+//            mUsedMemoryTv.setText(afterMemory);
+//            return;
+//        }
+//
+//        final int endValue;
+//        if (afterMemory.contains("KB")) {
+//            endValue = 0;
+//        } else if (afterMemory.contains("MB")) {
+//            endValue = Integer.parseInt(beforeMemory.split("MB")[0]);
+//        } else {
+//            mUsedMemoryTv.setText(afterMemory);
+//            return;
+//        }
+//
+//        ValueAnimator animator = ValueAnimator.ofObject(new IntEvaluator(), startValue, endValue);
+//        animator.setDuration(1000);
+//        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//            @Override
+//            public void onAnimationUpdate(ValueAnimator animation) {
+//                int value = (int) animation.getAnimatedValue();
+//                if (value != endValue) {
+//                    mUsedMemoryTv.setText(String.valueOf(value + "MB"));
+//                } else {
+//                    mUsedMemoryTv.setText(afterMemory);
+//                }
+//            }
+//        });
+//        animator.start();
+//    }
 
     class CleanUpAsyncTask extends AsyncTask<Void, Integer, String> {
         // 进程数
@@ -555,7 +555,7 @@ public class MoreFragment extends LazyLoadFragment {
         @Override
         protected void onProgressUpdate(Integer... memoryPercent) {
             super.onProgressUpdate(memoryPercent);
-            setCleanUpProgress(memoryPercent[0]);
+//            setCleanUpProgress(memoryPercent[0]);
         }
 
         @Override
@@ -631,78 +631,78 @@ public class MoreFragment extends LazyLoadFragment {
         super.onResume();
         LogUtil.d(LOG_TAG, "onResume");
         if (mIsPrepared) {
-            updateUIStatus();
+//            updateUIStatus();
         }
     }
 
-    private void updateUIStatus() {
-        // 更新清除缓存
-        String memory = DataCleanManager.getTotalCacheSize(getActivity());
-        mUsedMemoryTv.setText(memory);
-        setClearMemoryWave(memory);
-        // 更新一键清理
-        setCleanUpProgress(getUsedPercentValue());
-    }
+//    private void updateUIStatus() {
+//        // 更新清除缓存
+//        String memory = DataCleanManager.getTotalCacheSize(getActivity());
+//        mUsedMemoryTv.setText(memory);
+//        setClearMemoryWave(memory);
+//        // 更新一键清理
+//        setCleanUpProgress(getUsedPercentValue());
+//    }
+//
+//    private void setClearMemoryWave(String memory) {
+//        int progress;
+//        if (memory.contains("KB")) {
+//            if (memory.equals("0KB")) {
+//                progress = 0;
+//            } else {
+//                progress = 5;
+//            }
+//        } else if (memory.contains("MB")) {
+//            float mem = Integer.parseInt(memory.split("M")[0]);
+//            if (mem < 2) {
+//                progress = 10;
+//            } else if (mem < 3) {
+//                progress = 15;
+//            } else if (mem < 4) {
+//                progress = 20;
+//            } else if (mem < 6) {
+//                progress = 25;
+//            } else if (mem < 8) {
+//                progress = 30;
+//            } else if (mem < 10) {
+//                progress = 35;
+//            } else if (mem < 15) {
+//                progress = 40;
+//            } else if (mem < 20) {
+//                progress = 45;
+//            } else if (mem < 25) {
+//                progress = 50;
+//            } else if (mem < 30) {
+//                progress = 60;
+//            } else if (mem < 40) {
+//                progress = 70;
+//            } else if (mem < 50) {
+//                progress = 80;
+//            } else if (mem < 60) {
+//                progress = 90;
+//            } else {
+//                progress = 95;
+//            }
+//        } else {
+//            progress = 100;
+//        }
+//        mClearMemoryIv.setProgressValue(progress);
+//    }
 
-    private void setClearMemoryWave(String memory) {
-        int progress;
-        if (memory.contains("KB")) {
-            if (memory.equals("0KB")) {
-                progress = 0;
-            } else {
-                progress = 5;
-            }
-        } else if (memory.contains("MB")) {
-            float mem = Integer.parseInt(memory.split("M")[0]);
-            if (mem < 2) {
-                progress = 10;
-            } else if (mem < 3) {
-                progress = 15;
-            } else if (mem < 4) {
-                progress = 20;
-            } else if (mem < 6) {
-                progress = 25;
-            } else if (mem < 8) {
-                progress = 30;
-            } else if (mem < 10) {
-                progress = 35;
-            } else if (mem < 15) {
-                progress = 40;
-            } else if (mem < 20) {
-                progress = 45;
-            } else if (mem < 25) {
-                progress = 50;
-            } else if (mem < 30) {
-                progress = 60;
-            } else if (mem < 40) {
-                progress = 70;
-            } else if (mem < 50) {
-                progress = 80;
-            } else if (mem < 60) {
-                progress = 90;
-            } else {
-                progress = 95;
-            }
-        } else {
-            progress = 100;
-        }
-        mClearMemoryIv.setProgressValue(progress);
-    }
-
-    private void setCleanUpProgress(int percent) {
-        mCleanUpCP.setProgress(percent);
-
-        int color;
-        if (percent < 70) {
-            color = R.color.progress_1;
-        } else if (percent < 90) {
-            color = R.color.progress_2;
-        } else {
-            color = R.color.progress_3;
-        }
-        //noinspection deprecation
-        mCleanUpCP.setFinishedColor(getActivity().getResources().getColor(color));
-    }
+//    private void setCleanUpProgress(int percent) {
+//        mCleanUpCP.setProgress(percent);
+//
+//        int color;
+//        if (percent < 70) {
+//            color = R.color.progress_1;
+//        } else if (percent < 90) {
+//            color = R.color.progress_2;
+//        } else {
+//            color = R.color.progress_3;
+//        }
+//        //noinspection deprecation
+//        mCleanUpCP.setFinishedColor(getActivity().getResources().getColor(color));
+//    }
 
     @Override
     public void onDestroy() {

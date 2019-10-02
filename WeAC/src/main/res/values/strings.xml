@@ -286,7 +286,7 @@
     <!--关于-->
     <string name="weac_version">天气闹钟 v%1$s</string>
     <string name="weac_slogan">准时叫醒你的梦想</string>
-    <string name="copyright">© 2016 咖枯. All Rights Reserved.</string>
+    <string name="copyright">copyby re</string>
 
     <!--软件更新-->
     <string name="latest_version">当前已是最新版本</string>
